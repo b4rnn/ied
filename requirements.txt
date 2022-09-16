@@ -1,0 +1,4 @@
+flask
+flask_pymongo
+flask_cors
+uWSGI==2.0.19.1

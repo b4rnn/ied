@@ -1,0 +1,9 @@
+flask 
+uWSGI==2.0.19.1
+simplejson 
+pandas
+requests
+pymongo
+amqpstorm
+hnswlib
+numpy
