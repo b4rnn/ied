@@ -95,7 +95,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE  \
 -D WITH_CUBLAS=ON \
 -D OPENCV_PC_FILE_NAME=opencv4.pc \
 -D OPENCV_ENABLE_NONFREE=ON \
--D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0 
+-D CUDNN_INCLUDE_DIR=/usr/local/cuda/include \
+-D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so \
 -D BUILD_EXAMPLES=OFF ..
 ```
 ```
