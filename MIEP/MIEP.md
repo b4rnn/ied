@@ -55,8 +55,8 @@ cd cmake directory then ..
 
 ```
 cd /tmp
-wget -O opencv.zip https://github.com/opencv/opencv/archive/master.zip
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/master.zip
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip
 unzip opencv.zip
 unzip opencv_contrib.zip
 # Create build directory and switch into it
@@ -94,6 +94,9 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE  \
 -D OPENCV_PC_FILE_NAME=opencv4.pc \
 -D OPENCV_ENABLE_NONFREE=ON \
 -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0 -D BUILD_EXAMPLES=OFF ..
+```
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_C_COMPILER=/usr/bin/gcc-7  -D OPENCV_ENABLE_NONFREE=ON -D WITH_CUDA=ON -D WITH_CUDNN=ON -D OPENCV_DNN_CUDA=ON -D WITH_LIBV4L=ON-D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D CUDA_ARCH_BIN=8.6 -D WITH_CUBLAS=1 -D CUDNN_VERSION=8.2 -D CUDNN_INCLUDE_DIR=/usr/local/cuda/include -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so -D OPENCV_EXTRA_MODULES_PATH=/home/blackpearl/deepstream_tlt_apps/opencv_contrib/opencv_contrib-4.5.2/modules ..
+```
 ```
 ```
 make -j$(nproc)
