@@ -62,41 +62,21 @@ unzip opencv_contrib.zip
 # Create build directory and switch into it
 mkdir -p build && cd build
 #build opencv with dnn modules and cuda support
-cmake -D CMAKE_BUILD_TYPE=RELEASE  \
--D CMAKE_C_COMPILER=/usr/bin/gcc-7 \
--D CMAKE_INSTALL_PREFIX=/usr/local \
--D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib-master/modules ../opencv-master \
--D BUILD_TIFF=ON \
--D WITH_FFMPEG=ON \
--D WITH_GSTREAMER=ON \
--D WITH_TBB=ON \
--D BUILD_TBB=ON \
--D WITH_EIGEN=ON \
--D WITH_V4L=ON \
--D WITH_LIBV4L=ON \
--D WITH_VTK=OFF \
--D WITH_QT=OFF \
--D WITH_OPENGL=ON \
--D OPENCV_ENABLE_NONFREE=ON \
--D INSTALL_C_EXAMPLES=OFF \
--D INSTALL_PYTHON_EXAMPLES=OFF \
--D PYTHON_DEFAULT_EXECUTABLE=$(which python3) \
--D BUILD_SHARED_LIBS=OFF \
--D BUILD_NEW_PYTHON_SUPPORT=ON \
--D OPENCV_GENERATE_PKGCONFIG=ON \
--D BUILD_TESTS=OFF \
--D WITH_CUDA=ON \
--D WITH_CUDNN=ON \
--D OPENCV_DNN_CUDA=ON \
--D ENABLE_FAST_MATH=ON \
--D CUDA_FAST_MATH=ON \
--D WITH_CUBLAS=ON \
--D OPENCV_PC_FILE_NAME=opencv4.pc \
--D OPENCV_ENABLE_NONFREE=ON \
--D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.0 -D BUILD_EXAMPLES=OFF ..
-```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_C_COMPILER=/usr/bin/gcc-7  -D OPENCV_ENABLE_NONFREE=ON -D WITH_CUDA=ON -D WITH_CUDNN=ON -D OPENCV_DNN_CUDA=ON -D WITH_LIBV4L=ON-D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D CUDA_ARCH_BIN=8.6 -D WITH_CUBLAS=1 -D CUDNN_VERSION=8.2 -D CUDNN_INCLUDE_DIR=/usr/local/cuda/include -D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so -D OPENCV_EXTRA_MODULES_PATH=/home/blackpearl/deepstream_tlt_apps/opencv_contrib/opencv_contrib-4.5.2/modules ..
-```
+cmake -D CMAKE_BUILD_TYPE=RELEASE 
+-D CMAKE_C_COMPILER=/usr/bin/gcc-7  
+-D OPENCV_ENABLE_NONFREE=ON 
+-D WITH_CUDA=ON 
+-D WITH_CUDNN=ON 
+-D OPENCV_DNN_CUDA=ON 
+-D WITH_LIBV4L=ON
+-D ENABLE_FAST_MATH=1 
+-D CUDA_FAST_MATH=1 
+-D CUDA_ARCH_BIN=8.6 
+-D WITH_CUBLAS=1 
+-D CUDNN_VERSION=8.2 
+-D CUDNN_INCLUDE_DIR=/usr/local/cuda/include 
+-D CUDNN_LIBRARY=/usr/local/cuda/lib64/libcudnn.so 
+-D OPENCV_EXTRA_MODULES_PATH=/PATH_TO/opencv_contrib/opencv_contrib-4.5.2/modules ..
 ```
 ```
 make -j$(nproc)
