@@ -269,7 +269,3 @@ make -j{NUMBER_OF_THREADS}
 CMakeCache.txt  CMakeFiles  IED  Makefile  app.py  cmake_install.cmake  libfacedetect.so
 uwsgi --ini app.ini
 ```
-# [3] LCS
-# ied
-# ied
-# ied
